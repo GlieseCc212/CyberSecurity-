@@ -1,87 +1,94 @@
 # CyberSecurity-
-Prax, I checked your lab files. You have 3 cryptography assignments:
-	•	S-DES implementation
-	•	S-AES implementation
-	•	RSA encryption/decryption
+Alright Prax — here’s a clean, professional README that looks like something a serious GitHub repo would have. It’s structured, technical, and polished (not the typical “student assignment” vibe). You can paste this directly into README.md.
 
-Here are the files for reference:
-	•	￼ (Assignment 1 – S-DES)
-	•	￼ (Assignment 2 – S-AES)
-	•	￼ (Assignment 3 – RSA)
 
-You asked for a README, so here is a clean README.md you can directly put in GitHub.
+Cryptographic Algorithms Implementation (Java)
 
-⸻
+A Java-based implementation of fundamental cryptographic algorithms designed to demonstrate the core principles of symmetric and asymmetric encryption.
+This project explores the internal mechanisms of encryption systems including key generation, substitution, permutation, and modular arithmetic.
 
-🔐 Cryptography Algorithms Implementation
+The implementations are designed for educational and research purposes to help understand how modern encryption algorithms operate at a conceptual level.
 
-Implementation of fundamental cryptographic algorithms in Java for educational purposes.
-This project demonstrates how classical encryption systems work internally, including block ciphers and public-key cryptography.
 
-The implementations focus on understanding the internal operations such as permutations, substitutions, key generation, and modular arithmetic.
+Overview
 
-⸻
+This repository contains implementations of three core cryptographic algorithms:
+	•	Simplified Data Encryption Standard (S-DES)
+	•	Simplified Advanced Encryption Standard (S-AES)
+	•	RSA Public Key Cryptosystem
 
-📚 Implemented Algorithms
+Each algorithm demonstrates different aspects of cryptography such as Feistel networks, substitution–permutation networks, and asymmetric encryption.
 
-1️⃣ Simplified Data Encryption Standard (S-DES)
 
-S-DES is a simplified version of the DES block cipher designed for learning purposes.
+Implemented Algorithms
 
-Key Features
-	•	Uses 10-bit key
-	•	Encrypts 8-bit plaintext
-	•	Two-round Feistel structure
-	•	Uses permutations and S-boxes
+1. Simplified Data Encryption Standard (S-DES)
 
-Steps
-	1.	Key Generation
-	2.	Initial Permutation
-	3.	Round Function
-	4.	Swap Halves
-	5.	Second Round
-	6.	Inverse Permutation
+S-DES is a simplified block cipher designed to illustrate the internal structure of the Data Encryption Standard (DES). It uses a Feistel network and operates on small bit-sized data blocks to make the algorithm easier to understand.
 
-According to the assignment description, S-DES demonstrates how confusion and diffusion are achieved through permutations and substitutions.  ￼
+Characteristics
+	•	Block size: 8 bits
+	•	Key size: 10 bits
+	•	Structure: Feistel network
+	•	Rounds: 2
 
-⸻
+Core Operations
+	•	Initial permutation
+	•	Key generation using permutation and shifting
+	•	Round function (fk)
+	•	Substitution using S-Boxes
+	•	Half swapping
+	•	Inverse permutation
 
-2️⃣ Simplified Advanced Encryption Standard (S-AES)
+Learning Outcome
 
-S-AES is a reduced version of the AES encryption algorithm used for teaching cryptography concepts.
+The algorithm demonstrates how confusion and diffusion are achieved through substitution and permutation operations.
 
-Key Features
-	•	Uses 16-bit plaintext
-	•	Uses 16-bit key
-	•	Two rounds of encryption
-	•	Uses Galois Field GF(2⁴) arithmetic
 
-Encryption Operations
-	•	SubNib
+2. Simplified Advanced Encryption Standard (S-AES)
+
+S-AES is a reduced version of the Advanced Encryption Standard (AES) used for teaching purposes. It illustrates the structure of AES using smaller block sizes and simplified mathematical operations.
+
+Characteristics
+	•	Block size: 16 bits
+	•	Key size: 16 bits
+	•	Number of rounds: 2
+	•	Mathematical domain: Galois Field GF(2⁴)
+
+Encryption Steps
+	1.	Initial AddRoundKey
+	2.	Round 1
+	•	SubNib (substitution)
 	•	ShiftRows
 	•	MixColumns
 	•	AddRoundKey
+	3.	Round 2
+	•	SubNib
+	•	ShiftRows
+	•	AddRoundKey
 
-The algorithm structure closely mirrors real AES but in a simplified form for educational understanding.  ￼
+Learning Outcome
 
-⸻
+This implementation highlights how AES achieves strong security through:
+	•	Substitution layers
+	•	Permutation layers
+	•	Finite field arithmetic
 
-3️⃣ RSA Encryption Algorithm
 
-RSA is a public key cryptography algorithm widely used for secure communication.
+3. RSA Public Key Cryptosystem
+
+RSA is one of the most widely used asymmetric encryption algorithms used in modern secure communication systems.
 
 Key Concepts
-	•	Public Key (e, n)
-	•	Private Key (d, n)
-	•	Encryption
-	•	Decryption
+	•	Public key encryption
+	•	Modular exponentiation
+	•	Prime number factorization
+	•	Euler’s Totient function
 
-Steps
-
-Key Generation
-	1.	Choose two prime numbers p and q
+Key Generation Process
+	1.	Select two prime numbers p and q
 	2.	Compute n = p × q
-	3.	Compute Euler’s Totient
+	3.	Compute φ(n) = (p − 1)(q − 1)
 	4.	Select public exponent e
 	5.	Compute private key d
 
@@ -93,49 +100,78 @@ Decryption
 
 M = C^d mod n
 
-RSA security is based on the difficulty of factoring large composite numbers.  ￼
+Learning Outcome
+
+RSA demonstrates how mathematical hardness problems such as integer factorization provide security in cryptographic systems.
 
 ⸻
 
-🛠️ Technologies Used
-	•	Java
-	•	Object Oriented Programming
-	•	Modular Arithmetic
-	•	Cryptographic Algorithms
+Project Structure
 
-⸻
+cryptography-algorithms/
+│
+├── SDES.java
+├── SAES.java
+├── SimpleRSA.java
+│
+└── README.md
 
-▶️ How to Run
 
-Compile
+
+Requirements
+	•	Java Development Kit (JDK 8 or higher)
+	•	Any Java IDE or terminal environment
+
+
+Compilation
+
+Compile the Java programs using:
 
 javac SDES.java
 javac SAES.java
 javac SimpleRSA.java
 
-Run
+Execution
+
+Run the programs using:
 
 java SDES
 java SAES
 java SimpleRSA
 
+Each program accepts user input through the console and outputs the corresponding ciphertext and decrypted message.
 
-⸻
 
-🎯 Learning Outcomes
-	•	Understanding block cipher design
-	•	Learning public key cryptography
-	•	Implementing encryption and decryption algorithms
-	•	Understanding key generation and substitution techniques
+Educational Objectives
 
-⸻
+This project helps in understanding:
+	•	Fundamentals of symmetric and asymmetric cryptography
+	•	Block cipher architecture
+	•	Key scheduling techniques
+	•	Modular arithmetic in cryptographic systems
+	•	Security concepts such as confusion and diffusion
 
-👨‍💻 Author
+Applications of These Algorithms
+
+The concepts explored in this project are used in many modern systems including:
+	•	Secure web communication (HTTPS / TLS)
+	•	Digital signatures
+	•	Secure email systems
+	•	Authentication protocols
+	•	Data protection in distributed systems
+
+
+Author
 
 Pratik Pandurang Pawar
-B.Tech AIML
+B.Tech – Artificial Intelligence and Machine Learning
 Vishwakarma Institute of Technology, Pune
 
-⸻
 
-💡 If you want, I can also give you a much more impressive GitHub README (with diagrams, badges, and architecture) so it looks like a serious cryptography project instead of just a lab assignment. That will look way better on your portfolio. 🚀
+If you want, I can also show you how to make this 10× more impressive on GitHub by adding:
+	•	architecture diagrams
+	•	algorithm flowcharts
+	•	shields.io badges
+	•	encryption pipeline diagrams
+
+Those make your repo look like a real research/engineering project, not just a lab submission. 🚀
